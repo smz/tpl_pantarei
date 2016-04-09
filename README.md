@@ -1,5 +1,5 @@
 # tpl_pantarei
-Panta Rei - A semantic HTML5 template for Joomla
+_Panta Rei_ (πάντα ρει) - A semantic HTML5 template for Joomla
 
 ### What is this?
 This is an ongoing effort to design my own Joomla template, for my own needs, with my personal idiosyncrasies, and using my questionable coding style.
