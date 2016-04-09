@@ -12,6 +12,8 @@ No. I don't belive in microdata, unless used with a **great** effort to correctl
 Yes, I'm using JLayouts a lot, even when and where it is probably not considered a good idea. As an example, what in standard Joomla is the "article" template, here is implemented as a Jlayout. This has permitted me to re-use the same "article" JLayout for both the "Single Article" and the "Category Blog" views.
 ### You have namespaced most of your JLayouts...
 Yes, just to play it safe and not collide with anything defined in Joomla. The ones which are not namespaced right now comes directly from Protostar, so I think this is safe and fair enough.
+### Why the standard Twitter Bootstrap is there?
+Just in case... For testing... No particular reason. The default is to use the JUI version. You can get rid of the standard one if you wish. I, for one, normally use the JUI one.
 ### Is this an acomplished work?
 Absolutely **not**: it is a "living" thing that I modify from time to time according to my needs and available time.
 ### Does it break B/C?
