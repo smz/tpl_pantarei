@@ -9,7 +9,7 @@ I'm trying to leverage HTML5 elements to their maximum in order to generate HTML
 ### No microdata?
 No. I don't belive in microdata, unless used with a **great** effort to correctly describe **my content** and not the general markup of my HTML.
 ### What are allo those $h6_xxx?
-Those are headers for each of the sections in my template: they are meant as "hints" to the W3C validator (and hopefully search engines). All are defined as "language strings" in the Joomla sense and you can override/modify them, but I'd say that if you don't want them it is better to hide thame through CSS in your custom.css more than geld them.
+Those are headers for each of the sections in my template: they are meant as "hints" to the W3C validator (and hopefully search engines). All are defined as "language strings" in the Joomla sense and you can override/modify them, but I'd say that if you don't want them it is better to hide them through CSS in your custom.css more than geld them.
 ### There are a lot of JLayouts...
 Yes, I'm using JLayouts a lot, even when and where it is probably not considered a good idea. As an example, what in standard Joomla is the "article" template, here is implemented as a Jlayout. This has permitted me to re-use the same "article" JLayout for both the "Single Article" and the "Category Blog" views.
 ### You have namespaced most of your JLayouts...
