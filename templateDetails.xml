@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.4" type="template" method="upgrade">
+	<name>Panta Rei</name>
+	<description>SMZ_PANTAREI_XML_DESCRIPTION</description>
+	<author>Sergio Manzi</author>
+	<authorEmail>info@smz.it</authorEmail>
+	<authorUrl>http://smz.it</authorUrl>
+	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
+	<license>GNU General Public License (GNU GPL) Version 3</license>
+	<version>3.5.0.7</version>
+	<creationDate>March 2016</creationDate>
+	<files>
+		<filename>index.php</filename>
+		<filename>component.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>language</folder>
+		<folder>helpers</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>bootstrap</folder>
+	</files>
+	<positions>
+	<position>menu</position>
+	<position>hero</position>
+	<position>above</position>
+	<position>left</position>
+	<position>before-content</position>
+	<position>after-content</position>
+	<position>right</position>
+	<position>below</position>
+	<position>breadcrumbs</position>
+	<position>footer-left</position>
+	<position>footer-right</position>
+	<position>debug</position>
+	</positions>
+<!--
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_pantarei.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_pantarei.sys.ini</language>
+		<language tag="it-IT">it-IT/it-IT.tpl_pantarei.ini</language>
+		<language tag="it-IT">it-IT/it-IT.tpl_pantarei.sys.ini</language>
+	</languages>
+-->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="bootstrapVersion" type="list" default="JUI" label="SMZ_PANTAREI_BOOTSTRAPVERSION" description="SMZ_PANTAREI_BOOTSTRAPVERSION_DESC">
+					<option value="JUI">SMZ_PANTAREI_BOOTSTRAPJUI</option>
+					<option value="TWITTER">SMZ_PANTAREI_BOOTSTRAPTWITTER</option>
+				</field>
+				<field name="removeMootols" type="radio" class="btn-group" default="0" label="SMZ_PANTAREI_REMOVEMOOTOOLS" description="SMZ_PANTAREI_REMOVEMOOTOOLS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="fullWidth" type="radio" class="btn-group" default="0" label="SMZ_PANTAREI_FULLWIDTH" description="SMZ_PANTAREI_FULLWIDTH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="leftColumnWidth" type="list" 
+					default="3" 
+					label="SMZ_PANTAREI_LEFT_COLUMN_SPAN" 
+					description="SMZ_PANTAREI_LEFT_COLUMN_SPAN_DESC" >
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="rightColumnWidth" type="list" 
+					default="3" 
+					label="SMZ_PANTAREI_RIGHT_COLUMN_SPAN" 
+					description="SMZ_PANTAREI_RIGHT_COLUMN_SPAN_DESC" >
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="css_version_string" type="text" default="" label="SMZ_PANTAREI_CSS_STRING" description="SMZ_PANTAREI_CSS_STRING_DESC" filter="string" />
+			</fieldset>
+			<fieldset name="googlefonts" label="SMZ_PANTAREI_GOOGLEFONTS">
+				<field name="googlefont1" type="text" filter="string" default="" label="SMZ_PANTAREI_GOOGLEFONT1" description="SMZ_PANTAREI_GOOGLEFONTS_DESC" />
+				<field name="googlefont2" type="text" filter="string" default="" label="SMZ_PANTAREI_GOOGLEFONT2" description="SMZ_PANTAREI_GOOGLEFONTS_DESC" />
+				<field name="googlefont3" type="text" filter="string" default="" label="SMZ_PANTAREI_GOOGLEFONT3" description="SMZ_PANTAREI_GOOGLEFONTS_DESC" />
+				<field name="googlefont4" type="text" filter="string" default="" label="SMZ_PANTAREI_GOOGLEFONT4" description="SMZ_PANTAREI_GOOGLEFONTS_DESC" />
+				<field name="googlefont5" type="text" filter="string" default="" label="SMZ_PANTAREI_GOOGLEFONT5" description="SMZ_PANTAREI_GOOGLEFONTS_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
