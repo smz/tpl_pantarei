@@ -29,6 +29,11 @@ if (file_exists(JPATH_SITE . '/images/favicons/favicons.php'))
 <div class='hidden no-js container' style='margin-top:40px;text-align:center;'>
 <span class='alert alert-error'><?php echo JText::_('SMZ_NOJAVASCRIPT_ALERT') ?></span>
 </div>
+<?php if($this->countModules('above-menu')) : ?>
+<div id='above-menu' class='js fullwidth'>
+<jdoc:include type="modules" name="above-menu" />
+</div>
+<?php endif; ?>
 <div class='js'>
 <jdoc:include type="modules" name="menu" />
 </div>
