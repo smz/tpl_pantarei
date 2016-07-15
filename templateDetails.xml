@@ -7,14 +7,14 @@
 	<authorUrl>http://smz.it</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.5.0.8</version>
-	<creationDate>March 2016</creationDate>
+	<version>3.5.1.0</version>
+	<creationDate>July 2016</creationDate>
 	<files>
-		<filename>index.php</filename>
-		<filename>component.php</filename>
-		<filename>templateDetails.xml</filename>
-		<filename>template_preview.png</filename>
-		<filename>template_thumbnail.png</filename>
+		<file>index.php</file>
+		<file>component.php</file>
+		<file>templateDetails.xml</file>
+		<file>template_preview.png</file>
+		<file>template_thumbnail.png</file>
 		<folder>language</folder>
 		<folder>helpers</folder>
 		<folder>html</folder>

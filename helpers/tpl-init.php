@@ -77,7 +77,7 @@ for ($i = 1; $i < 6; $i++)
 	$font = str_replace(' ', '+', trim($this->params->get('googlefont' . $i, '')));
 	if ($font)
 	{
-		$doc->addStyleSheet('http://fonts.googleapis.com/css?family='. $font);
+		$doc->addStyleSheet('https://fonts.googleapis.com/css?family='. $font);
 	}
 }
 

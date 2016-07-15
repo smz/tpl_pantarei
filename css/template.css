@@ -33,6 +33,9 @@ section.intro p {text-align:justify;}
 .uppercase {text-transform:uppercase;}
 .italic, cite {font-style:italic;}
 
+/* Fix for Bootstrap 2 abbr */
+abbr[title] {border-bottom:initial;}
+
 /* Links colors */
 a {color:#6E4B80}
 a:hover {color:#cc1fad}
