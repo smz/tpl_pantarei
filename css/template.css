@@ -7,7 +7,8 @@ div#internal.fullwidth {max-width:none;}
 @media (max-width:767px) {
 	div#internal {padding-left:15px;padding-right:15px;}
 }
-/* oops... where I use this? Can't remember... */
+
+/* oops... where is this used? Can't remember... */
 .affix {top: 0;}
 
 /* .container-fluid {margin:0 auto;padding-left:0;padding-right:0;} */
@@ -33,8 +34,8 @@ section.intro p {text-align:justify;}
 .uppercase {text-transform:uppercase;}
 .italic, cite {font-style:italic;}
 
-/* Fix for Bootstrap 2 abbr */
-abbr[title] {border-bottom:initial;}
+/* Remove dotted line under <abbr> */
+/* abbr[title] {border-bottom:initial;} */
 
 /* Links colors */
 a {color:#6E4B80}
