@@ -10,10 +10,10 @@ defined('_JEXEC') or die;
 
 {
 	$moduleTag = $params->get('module_tag');
-	$moduleClass = $this->escape($params->get('moduleclass_sfx'));
+	$moduleClass = htmlspecialchars($params->get('moduleclass_sfx'));
 	$bootstrapSize = $params->get('bootstrap_size');
 	$spanClass = !empty($bootstrapSize) ? ' span' . (int) $bootstrapSize . '' : '';
-	$headerTag = $this->escape($params->get('header_tag'));
+	$headerTag = htmlspecialchars($params->get('header_tag'));
 	$headerClass = trim($params->get('header_class'));
 	$backgroundimage = $params->get('backgroundimage');
 

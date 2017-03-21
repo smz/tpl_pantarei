@@ -31,7 +31,7 @@ $this->item->article_class = $this->pageclass_sfx;
 // Page title (from menu)
 if ($this->params->get('show_page_heading'))
 {
-	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . $this->escape($this->params->get('page_heading')) . "</h1>";
+	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . htmlspecialchars($this->params->get('page_heading')) . "</h1>";
 	$this->item->title_heading = 'h2';
 	$this->item->article_class ="";
 }

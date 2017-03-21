@@ -7,7 +7,6 @@
 	<authorUrl>http://smz.it</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.5.1.0</version>
 	<creationDate>July 2016</creationDate>
 	<files>
 		<file>index.php</file>

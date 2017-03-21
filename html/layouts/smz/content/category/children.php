@@ -29,7 +29,7 @@ if (count($children[$category->id]) > 0 && $maxLevel != 0)
 			echo "<ul class='nav nav-list'>";
 			{
 				echo "<li><a href='" . JRoute::_(ContentHelperRoute::getCategoryRoute($child->id)) . "'>";
-				echo $this->escape($child->title);
+				echo htmlspecialchars($child->title);
 				if ( $params->get('show_cat_num_articles', 1))
 				{
 					$n = $child->getNumItems($params->get('count_is_inclusive'));

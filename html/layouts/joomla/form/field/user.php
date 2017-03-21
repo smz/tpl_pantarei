@@ -53,7 +53,7 @@ $link = 'index.php?option=com_users&amp;view=users&amp;layout=modal&amp;tmpl=com
 	. (isset($excluded) ? ('&amp;excluded=' . base64_encode(json_encode($excluded))) : '');
 
 // Invalidate the input value if no user selected
-if (JText::_('JLIB_FORM_SELECT_USER') == $this->escape($userName, ENT_COMPAT, 'UTF-8'))
+if (JText::_('JLIB_FORM_SELECT_USER') == htmlspecialchars($userName, ENT_COMPAT, 'UTF-8'))
 {
 	$userName = "";
 }
@@ -73,7 +73,7 @@ JHtml::script('jui/fielduser.min.js', false, true, false, false, true);
 	<div class="input-append">
 		<input
 			type="text" id="<?php echo $id; ?>"
-			value="<?php echo  $this->escape($userName, ENT_COMPAT, 'UTF-8'); ?>"
+			value="<?php echo  htmlspecialchars($userName, ENT_COMPAT, 'UTF-8'); ?>"
 			placeholder="<?php echo JText::_('JLIB_FORM_SELECT_USER'); ?>"
 			readonly
 			class="field-user-input-name <?php echo $class ? (string) $class : ''?>"
@@ -95,5 +95,5 @@ JHtml::script('jui/fielduser.min.js', false, true, false, false, true);
 	<?php // Create the real field, hidden, that stored the user id. ?>
 	<input type="hidden" id="<?php echo $id; ?>_id" name="<?php echo $name; ?>" value="<?php echo (int) $value; ?>"
 		class="field-user-input <?php echo $class ? (string) $class : ''?>"
-		data-onchange="<?php echo $this->escape($onchange); ?>"/>
+		data-onchange="<?php echo htmlspecialchars($onchange); ?>"/>
 </div>

@@ -10,6 +10,6 @@ defined('JPATH_BASE') or die;
 
 extract($displayData);
 
-echo "<a href='{$this->escape($url)}' rel='nofollow'";
+echo "<a href='{htmlspecialchars($url)}' rel='nofollow'";
 echo " onclick=\"window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width={$width},height={$height}');return false;\"";
-echo ">{$this->escape($text)}</a>";
+echo ">{htmlspecialchars($text)}</a>";

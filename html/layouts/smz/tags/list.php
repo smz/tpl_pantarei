@@ -30,7 +30,7 @@ if (!empty($tags))
 			$link_class = $tagParams->get('tag_link_class', 'label label-info');
 			echo "<li class='tag-{$tag->tag_id} tag-list{$i}'>";
 			echo "<a href='" . JRoute::_(TagsHelperRoute::getTagRoute($tag->tag_id . '-' . $tag->alias)) . "' class='{$link_class}'>";
-			echo $this->escape($tag->title);
+			echo htmlspecialchars($tag->title);
 			echo "</a></li>";
 		}
 	}

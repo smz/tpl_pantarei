@@ -12,4 +12,4 @@ extract($displayData);
 
 JHtml::_('behavior.modal', 'a.modal');
 
-echo "<a href='{$this->escape($url)}' class='modal' rel=\"{handler:'iframe',size:{x:{$width},y:{$height}}}\">{$this->escape($text)}</a>";
+echo "<a href='{htmlspecialchars($url)}' class='modal' rel=\"{handler:'iframe',size:{x:{$width},y:{$height}}}\">{htmlspecialchars($text)}</a>";

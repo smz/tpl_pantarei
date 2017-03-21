@@ -28,7 +28,7 @@ echo "<div class='span12'>";
 // Page title (from menu)
 if ($this->params->get('show_page_heading'))
 {
-	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . $this->escape($this->params->get('page_heading')) . "</h1>";
+	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . htmlspecialchars($this->params->get('page_heading')) . "</h1>";
 	$articles_heading_level++;
 	$category_heading_level++;
 }
@@ -39,7 +39,7 @@ echo "<section class='category-blog{$this->pageclass_sfx}'>";
 	if ($this->params->get('show_category_title', 1) || $this->params->get('page_subheading'))
 	{
 		$category_title = $this->params->get('show_category_title') ? $this->category->title : '';
-		$subheading = $this->escape($this->params->get('page_subheading'));
+		$subheading = htmlspecialchars($this->params->get('page_subheading'));
 		$subheading = $subheading == '' ? '' : "<span class='subheading'>{$subheading}</span>";
 		echo "<h{$category_heading_level} class='blog-header'>{$subheading}{$category_title}</h{$category_heading_level}>";
 		$articles_heading_level++;
@@ -53,7 +53,7 @@ echo "<section class='category-blog{$this->pageclass_sfx}'>";
 		echo JLayoutHelper::render('smz.content.category.details', array(
 			'description' => $description,
 			'image' => $image,
-			'alt' => $this->escape($this->category->getParams()->get('image_alt')),
+			'alt' => htmlspecialchars($this->category->getParams()->get('image_alt')),
 			'raw' => false,
 			'header' => $h6_info
 			));

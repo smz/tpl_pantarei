@@ -94,7 +94,7 @@ if ($access || $teaser)
 	if ($params->get('show_title'))
 	{
 		// Link title (not when in "single article" view)
-		$title = $this->escape($item->title);
+		$title = htmlspecialchars($item->title);
 		if ($access && !$single_article && $params->get('link_titles'))
 		{
 			$title = "<a href='" . JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)) . "'>{$title}</a>";

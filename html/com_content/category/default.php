@@ -35,7 +35,7 @@ echo "<div class='span12'>";
 // Page title (from menu)
 if ($this->params->get('show_page_heading'))
 {
-	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . $this->escape($params->get('page_heading')) . "</h1>";
+	echo "<h1 class='page-header{$this->pageclass_sfx}'>" . htmlspecialchars($params->get('page_heading')) . "</h1>";
 	$articles_heading_level++;
 	$category_heading_level++;
 }
@@ -46,7 +46,7 @@ echo "<section class='{$componentName}-category{$this->pageclass_sfx}'>";
 if ($this->params->get('show_category_title', 1))
 {
 	$category_title = $this->params->get('show_category_title') ? $this->category->title : '';
-	$subheading = $this->escape($this->params->get('page_subheading'));
+	$subheading = htmlspecialchars($this->params->get('page_subheading'));
 	$subheading = $subheading == '' ? '' : "<span class='subheading'>{$subheading}</span>";
 	echo "<h{$category_heading_level} class='category-title'>{$subheading}{$category_title}</h{$category_heading_level}>";
 	$articles_heading_level++;
@@ -60,7 +60,7 @@ if ($haveimage || $havedescription)
 	echo JLayoutHelper::render('smz.content.category.details', array(
 		'description' => $description,
 		'image' => $image,
-		'alt' => $this->escape($this->category->getParams()->get('image_alt')),
+		'alt' => htmlspecialchars($this->category->getParams()->get('image_alt')),
 		'raw' => false,
 		'header' => $h6_info
 		));
@@ -77,8 +77,8 @@ if ($this->params->get('show_cat_tags', 1) && !empty($this->category->tags->item
 }
 
 // "default_articles" sub-template
-$listOrder = $this->escape($this->state->get('list.ordering'));
-$listDirn  = $this->escape($this->state->get('list.direction'));
+$listOrder = htmlspecialchars($this->state->get('list.ordering'));
+$listDirn  = htmlspecialchars($this->state->get('list.direction'));
 
 
 echo "<section class='category-items'>{$h6_items}";
@@ -105,7 +105,7 @@ else
 		}
 	}
 
-	echo "<form action='" . $this->escape(JUri::getInstance()->toString()) . "' method='post' name='adminForm' id='adminForm' class='form-inline'>";
+	echo "<form action='" . htmlspecialchars(JUri::getInstance()->toString()) . "' method='post' name='adminForm' id='adminForm' class='form-inline'>";
 	if ($this->params->get('show_headings') || $this->params->get('filter_field') != 'hide' || $this->params->get('show_pagination_limit'))
 	{
 		echo "<fieldset class='filters clearfix'>";
@@ -113,7 +113,7 @@ else
 		{
 			echo "<div class='control-group span6'>";
 			echo "<div class='controls'>";
-			echo "<input type='text' name='filter-search' id='filter-search' value='" . $this->escape($this->state->get('list.filter')) . "' class='inputbox' onchange='document.adminForm.submit();' title='" . JText::_('COM_CONTENT_FILTER_SEARCH_DESC') . "' placeholder='" . JText::_('COM_CONTENT_' . $this->params->get('filter_field') . '_FILTER_LABEL') . "' />";
+			echo "<input type='text' name='filter-search' id='filter-search' value='" . htmlspecialchars($this->state->get('list.filter')) . "' class='inputbox' onchange='document.adminForm.submit();' title='" . JText::_('COM_CONTENT_FILTER_SEARCH_DESC') . "' placeholder='" . JText::_('COM_CONTENT_' . $this->params->get('filter_field') . '_FILTER_LABEL') . "' />";
 //			echo "<span class='help-inline'>&#160;" . JText::_('COM_CONTENT_' . $this->params->get('filter_field') . '_FILTER_LABEL') . '</span>';
 			echo "</div>";
 			echo "</div>";
@@ -201,13 +201,13 @@ else
 		if (in_array($article->access, $this->user->getAuthorisedViewLevels()))
 		{
 			echo "<a href='" . JRoute::_(ContentHelperRoute::getArticleRoute($article->slug, $article->catid, $article->language)) . "'>";
-			echo $this->escape($article->title);
+			echo htmlspecialchars($article->title);
 			echo "</a>";
 		}
 		else
 		{
 
-			echo $this->escape($article->title) . ' : ';
+			echo htmlspecialchars($article->title) . ' : ';
 			$menu   = JFactory::getApplication()->getMenu();
 			$active = $menu->getActive();
 			$itemId = $active->id;
@@ -238,7 +238,7 @@ else
 		if ($this->params->get('list_show_date'))
 		{
 			echo "<td " . $headerDate . " class='list-date small'>";
-			echo JHtml::_('date', $article->displayDate,	$this->escape($this->params->get('date_format', JText::_('DATE_FORMAT_LC3'))));
+			echo JHtml::_('date', $article->displayDate,	htmlspecialchars($this->params->get('date_format', JText::_('DATE_FORMAT_LC3'))));
 			echo "</td>";
 		}
 		if ($this->params->get('list_show_author', 1))

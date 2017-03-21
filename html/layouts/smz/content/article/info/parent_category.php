@@ -12,7 +12,7 @@ extract($displayData);
 
 echo "<dt class='parent-category-name'>" . JText::sprintf('COM_CONTENT_PARENT', '') . "</dt>";
 
-$title = $this->escape($item->parent_title);
+$title = htmlspecialchars($item->parent_title);
 
 if ($params->get('link_parent_category') && $item->parent_slug)
 {

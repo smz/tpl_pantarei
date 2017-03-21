@@ -25,15 +25,15 @@ if (!empty($images->{$image}))
 	echo "<figure class='{$type}{$class}'>";
 	// This is curious: we MUST use double quotes for the "src" attribute value as Joomla! corrects for the lack of the leading slash
 	// in references to image files (they lack it when picked by the media manager) only if the value is expressed between double quotes!!!
-	echo "<img src=\"" . $this->escape($images->{$image}) . "\" alt='" . $this->escape($images->{$alt}) . "'";
+	echo "<img src=\"" . htmlspecialchars($images->{$image}) . "\" alt='" . htmlspecialchars($images->{$alt}) . "'";
 	if ($images->{$alt})
 	{
-		echo " title='" . $this->escape($images->{$alt}) . "'";
+		echo " title='" . htmlspecialchars($images->{$alt}) . "'";
 	}
 	echo " />";
 	if ($images->{$caption})
 	{
-		echo "<figcaption> " . $this->escape($images->{$caption}) . "</figcaption>";
+		echo "<figcaption> " . htmlspecialchars($images->{$caption}) . "</figcaption>";
 	}
 	echo "</figure>";
 }

@@ -20,7 +20,7 @@ if (!empty($description) || !empty($image))
 
 	if (!empty($image))
 	{
-		echo "<img src=\"{$image}\" alt='" . $this->escape($alt) . "'/>";
+		echo "<img src=\"{$image}\" alt='" . htmlspecialchars($alt) . "'/>";
 	}
 
 	if (!empty($description))

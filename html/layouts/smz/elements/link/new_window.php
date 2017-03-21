@@ -10,4 +10,4 @@ defined('JPATH_BASE') or die;
 
 extract($displayData);
 
-echo "<a href='{$this->escape($url)}' rel='nofollow' target='_blank'>{$this->escape($text)}</a>";
+echo "<a href='{htmlspecialchars($url)}' rel='nofollow' target='_blank'>{htmlspecialchars($text)}</a>";
