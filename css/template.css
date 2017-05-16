@@ -1,28 +1,40 @@
-body {padding:0px !important;}
-body.print {margin:10px;}
-
-/* Internal */
-div#internal {max-width:940px;margin:0 auto;}
-div#internal.fullwidth {max-width:none;}
-@media (max-width:767px) {
-	div#internal {padding-left:15px;padding-right:15px;}
+@media (min-width:768px) {
+	body {font-size:18px;line-height:28px;}
 }
 
-/* oops... where is this used? Can't remember... */
-.affix {top: 0;}
+/* Main divs */
+div#system-message {margin-top:20px;}
+div#internal, div#top {max-width:1200px;margin:0 auto;padding-left:0;padding-right:0;}
+div#above {margin-top:0;}
+div#above-content {min-height:0;margin-right:0;margin-left:0;margin-bottom:10px;}
+div#content {padding-top:0;}
+div#below-content {min-height:0;margin-left:0;}
+div#hero {padding-top:10px;}
+div#main {margin-bottom:8px;}
+div#breadcrumbs {padding-top:8px;}
 
-/* .container-fluid {margin:0 auto;padding-left:0;padding-right:0;} */
-@media (max-width:767px) {.row-fluid [class*="offset"] {margin-left:0;}}
+@media (max-width:1248px) {
+	div#internal, div#top {margin-right:24px;margin-left:24px;}
+}
+
+@media (max-width:767px) {
+	div#internal, div#top {margin-right:0;margin-left:0;}
+	.row-fluid [class*="offset"] {margin-left:0;}
+}
+
+/* Must check this... */
+.page-header, .article-header, .blog-header {border-bottom:0;padding-bottom:0;margin: 15px 0 15px 0;}
+
+/* Module Spacing in left and right columns */
+div#left div.moduletable, div#right div.moduletable {margin-bottom:18px;}
+div#left div.moduletable:last-child, div#right div.moduletable:last-child {margin-bottom:0;}
+
+/* fullwidth - Must check this... */
+div#internal.fullwidth {max-width:none; padding-right:20px; padding-left:20px;}
 div.container-fluid.fullwidth {max-width:initial;margin-right:0;margin-left:0;}
 
 
-/* h1 - h6 */
-h1, h2, h3, h4, h5, h6 {font-weight:400;color:#444;}
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {color:inherit;}
-.alert h4 {font-size:22px;font-weight:700;margin-bottom:5px;}
-#main h4 {font-size:24px;margin:15px 0 8px 0;}
-
-/* Fix for ul and ol (when a floated element to the left exists) */
+/* Fix for ul and ol (when a floated element to the left exists) - Must check this... */
 /* ul,ol {overflow:hidden;margin:0 0 10px 0;} */
 
 /* Scaffolding */
@@ -30,12 +42,20 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {color:inherit;}
 
 /* Tipography */
 .text-justify p, p.text-justify {text-align:justify;}
-section.intro p {text-align:justify;}
+.left p, p.left {text-align:left;}
 .uppercase {text-transform:uppercase;}
+.lowercase {text-transform:lowercase;}
 .italic, cite {font-style:italic;}
 
-/* Remove dotted line under <abbr> */
-/* abbr[title] {border-bottom:initial;} */
+/* h1 - h6 */
+h1, h2, h3, h4, h5, h6 {font-weight:400;color:#444;}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {color:inherit;}
+.alert h4 {font-size:22px;font-weight:700;margin-bottom:5px;}
+#main h4 {font-size:24px;margin:15px 0 8px 0;}
+h6.section-header {display:none;visibility:hidden;}
+
+/* Remove dotted line under <abbr> in Firefox */
+abbr {text-decoration: none !important;}
 
 /* Links colors */
 a {color:#6E4B80}
@@ -44,19 +64,26 @@ a:hover {color:#cc1fad}
 /* Images */
 img.top-left {float:left;margin:0 10px 10px 0;position:relative;top:7px;}
 
-/******************************************************************************/
+/* Navbar */
+nav.navbar ul.nav {font-size:14px; line-height:20px; letter-spacing:1px; font-weight:400; text-transform:uppercase;}
 
+/* Language switcher */
 div#language-switcher {float:right;}
-ul.lang-inline li {margin-left:0 !important;}
+ul.lang-inline li {margin-left:0;}
+ul.lang-inline li + li {margin-left:5px;}
 
-/******************************************************************************/
+/* Pager (navigation) */
+ul.pager {display:block;font-size:14px;box-shadow: unset;}
+ul.pager li.next {float:right;}
+ul.pager li a {border-radius:15px !important;}
+div.pagination.span12 {margin-left:0;}
 
-/* Smart Search */
+/* Smart Search - Must check this... */
 form#mod-finder-searchform input.search-query {border-radius:0;}
 form#mod-finder-searchform {display:block;margin-top:30px;margin-bottom:0;}
 @media (max-width:767px) {form#mod-finder-searchform {margin-top:10px;}}
 
-/* Mod Search */
+/* Mod Search - Must check this... */
 div#top-right input.inputbox.search-query {border-radius:0;width:initial;font-size:12px;padding:4px}
 
 /* Search (old) */
@@ -76,50 +103,16 @@ dl.search-results {padding-top:12px;margin-bottom:10px;border-top:1px solid #ccc
 .search dt.result-title {margin-top:8px;}
 .search dd {margin-left:16px;}
 
-/* System messages */
-div#system-message {margin-top:20px;}
-
-/* Content */
-div#content {padding-top:20px;}
-
-.page-header, .article-header, .blog-header {border-bottom:0;padding-bottom:0;margin: 0 0 15px 0;}
-
-/* Above content */
-div#above-content {min-height:0;margin-right:0;margin-left:0;margin-bottom:10px;}
-div#below-content {min-height:0;margin-left:0;}
-
-div#above-content .nav {font-size:12px;letter-spacing:1px;font-weight:400;}
-div#above-content .navbar-inner  {padding-right:0;min-height:0;}
-div#above-content ul.nav.menu  {margin:-10px 0 0;padding-bottom:10px;border-bottom: 1px solid #ccc;margin-left:0;}
-div#above-content li {display:inline;}
-div#above-content li > a {display:inline;color:#6E4B80;padding: 3px 4px;margin-bottom:5px;}
-div#above-content li:last-child > a {margin-right:-4px;}
-div#above-content .navbar .nav li > a:hover,div#above-content .navbar .nav li > a:focus, div#above-content .navbar .nav li.active > a:hover, div#above-content .navbar .nav li.active > a:focus {color:#cc1fad;text-decoration:underline;background-color:#fff;}
-div#above-content .navbar .nav li.active > a, div#above-content .navbar .nav li.active > a:hover, div#above-content .navbar .nav li.active > a:focus {background-color:#e8e8ff;}
-
-/* Hero */
-div#hero {padding-top:10px;}
-
-/* Main */
-div#main {padding-bottom:16px;}
-
-div#above {margin-top:10px;}
-
-/* Module Spacing in left and right columns */
-div#left div.moduletable, div#right div.moduletable {margin-bottom:18px;}
-div#left div.moduletable:last-child, div#right div.moduletable:last-child {margin-bottom:0;}
-
-
-/* Breadcrumbs */
-.breadcrumb {background-color:inherit;border:1px solid #ccc;border-left:0;border-right:0;border-radius: 0;}
+/* Breadcrumbs - Must check this... */
+.breadcrumb {font-size:14px; line-height:20px; background-color:inherit; border:1px solid #ccc; border-left:0; border-right:0; border-radius: 0;}
 .breadcrumb span.icon-home {padding-right:0;}
 .breadcrumb span.icon-arrow-right {margin-left:5px;padding-right:0;}
 
 /* Footer */
 .footer {background-color: rgba(135, 206, 232, 0.2);}
 .footer {font-size:12px;margin-bottom:20px;border-radius:8px;}
-.footer div.pull-left {padding:8px;}
-.footer div.pull-right {padding:8px;}
+.footer div.pull-left {padding:8px 8px 8px 12px;}
+.footer div.pull-right {padding:8px 12px 8px 8px;}
 @media (max-width:499px) {
 .footer div.pull-right {float:none;}
 }
@@ -130,24 +123,19 @@ div#left div.moduletable:last-child, div#right div.moduletable:last-child {margi
 
 /* Pull-right-desktop */
 @media (min-width:768px){
-.pull-right-desktop {float:right;}
+	.pull-right-desktop {float:right;}
 }
 
 @media (max-width:767px){
-.show-desktop {display:none !important;}
+	.show-desktop {display:none !important;}
 }
 @media (min-width:768px){
-.hide-desktop {display:none !important;}
+	.hide-desktop {display:none !important;}
 }
 
 
 /* Article body */
 article .article-body p, article .intro p {text-align:justify;}
-@media (min-width:768px){
-	article .article-body, article .article-body p, article .article-body li,
-	article .intro, article .intro p, article .intro li 
-	{font-size:18px;line-height:24px;}
-}
 
 /* Admin info */
 article .admin-info {margin-bottom:10px;}
@@ -168,16 +156,8 @@ article .tags ul {margin:0;}
 article .tags ul.tags.inline li:first-of-type {padding-left:0;}
 article .tags ul.tags.inline li:last-of-type {padding-right:0;}
 
-/* Hidden headings */
-article section.info.more h6 {display:none;visibility:hidden;}
-article section.links h6 {display:none;visibility:hidden;}
-article aside.rating h6 {display:none;visibility:hidden;}
-nav.navigation.above, nav.navigation.below h6 {display:none;visibility:hidden;}
-
+/* Category listing */
 section.category-details p {text-align:justify;}
-@media (min-width:768px){
-section.category-details p	{font-size:18px;line-height:24px;}
-}
 
 /* Subcategories listing */
 section.category-children ul {padding:0;}
@@ -185,6 +165,21 @@ section.category-children ul > li > ul > li > ul {padding:0 15px 0 15px;}
 
 section.category-items th.list-hits, section.category-items td.list-hits,
 section.category-items th.list-edit, section.category-items td.list-edit {text-align:right;}
+
+/* AcyMailing subscription (component) */
+div#acymodifyform span.refreshCaptcha {margin-left:8px; margin-top:5px;}
+div#acymodifyform td.captchakeycomponent {padding-top:5px;}
+
+/* AcyMailing Archive*/
+div#acyarchivelisting form#adminForm {margin-bottom:0;}
+div#acyarchivelisting button.buttongo {margin:0 0 10px 5px;}
+div#acyarchivelisting button.buttonreset {margin:0 0 10px 5px;}
+div#acyarchivelisting span#orderingoption {display:none; visibility:hidden;}
+div#acyarchivelisting div.archiveRow {padding:4px 0 4px 0;}
+div#acyarchivelisting div.archiveRow1 {background-color:rgb(249, 249, 249);}
+div#acyarchivelisting div.acyarchivetitle {padding-left:10px; font-size:inherit; line-height:inherit; font-weight:normal;}
+div#acyarchivelisting div.sentondate {padding-left:10px; font-size:inherit; line-height:inherit;}
+html:lang(it) div#acyarchivelisting div.sentondate {text-transform:lowercase;}
 
 /****************************** Boostrap fixes *********************************/
 
@@ -226,39 +221,25 @@ div.left p {text-align:left;}
 .reset-complete form {margin-top:6px;margin-bottom:10px;background-color:#F5F5F5;border:1px solid #E3E3E3;border-radius:4px 4px 4px 4px;padding:19px;}
 .reset-complete form div.form-actions {padding:0;margin-top:0;margin-bottom:0;margin-left:180px;background-color:inherit;border:0;}
 
-/* Acymailing */
-table.smz-acysearch button {margin-bottom:10px;}
-
-/* Acymailing unsubscribe */
-div#unsuball_div, div#unsubfull_div{display:none;}
-div.unsuboptions {padding-left:10px !important;margin-bottom:10px;}
-div#unsubbutton_div {padding-left:10px;margin-bottom:10px;}
-
-/* Acymailing Subscribe */
-div#acymodifyform fieldset.acy_subscription_list {display:none;}
-input#user_captcha {margin-bottom:0 !important;}
-span.refreshCaptcha {margin-top:5px;}
-p.acymodifybutton {padding-left:160px;}
-
 /* @media print */
 @media print {
-.visible-phone {display:none !important;}
-a[href]:after {content: none !important;}
-div#menu {display:none !important}
-div#top-right {display:none !important}
-div#breadcrumbs {display:none !important}
-div.footer-right {display:none !important}
-.row-fluid [class*="span"] {display:block !important;width:100% !important; margin-left:0 !important; float:none !important}
-p.readmore {display:none !important;}
-abbr {display:none;}
-*.displayonly {display: none !important;}
+	.visible-phone {display:none !important;}
+	a[href]:after {content: none !important;}
+	div#menu {display:none !important}
+	div#top-right {display:none !important}
+	div#breadcrumbs {display:none !important}
+	div.footer-right {display:none !important}
+	.row-fluid [class*="span"] {display:block !important;width:100% !important; margin-left:0 !important; float:none !important}
+	p.readmore {display:none !important;}
+	abbr {display:none;}
+	*.displayonly {display: none !important;}
 }
 
 @media screen {
-*.printonly {display:none !important;}
+	*.printonly {display:none !important;}
 }
 
-/* Language selector */
+/* Hide unwanted languages */
 html:lang(en) *:lang(it) {display:none !important;}
 html:lang(it) *:lang(en) {display:none !important;}
 
@@ -269,4 +250,3 @@ html:lang(it) *:lang(en) {display:none !important;}
 .no-js *.js {display:none;}
 .no-js div.no-js {display: block !important;visibility: visible !important}
 div.no-js span.alert {font-size:24px;padding:6px 12px;}
-/******************************************************************************/
