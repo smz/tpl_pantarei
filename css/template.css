@@ -129,6 +129,7 @@ dl.search-results {padding-top:12px;margin-bottom:10px;border-top:1px solid #ccc
 @media (max-width:767px){
 	.show-desktop {display:none !important;}
 }
+
 @media (min-width:768px){
 	.hide-desktop {display:none !important;}
 }
@@ -199,16 +200,6 @@ html:lang(it) div#acyarchivelisting div.sentondate {text-transform:lowercase;}
 
 /******************************************************************************/
 
-/* left ?? useful?? */
-div.left p {text-align:left;}
-
-/* Opposing titles in 2 columns blog layout */
-.alt-titles h2 {text-transform:uppercase;}
-@media (min-width:768px){.alt-titles div.column-2 > h2 {text-align:right;}}
-@media print {.alt-titles div.column-2 > h2 {text-align:left;}}
-
-/******************************************************************************/
-
 /* mod_login (Phone menu) */
 .visible-phone label {color:#fff;}
 .visible-phone form#login-form ul > li > a {color:#F0D060;}
@@ -230,24 +221,6 @@ div.left p {text-align:left;}
 .reset-complete form {margin-top:6px;margin-bottom:10px;background-color:#F5F5F5;border:1px solid #E3E3E3;border-radius:4px 4px 4px 4px;padding:19px;}
 .reset-complete form div.form-actions {padding:0;margin-top:0;margin-bottom:0;margin-left:180px;background-color:inherit;border:0;}
 
-/* @media print */
-@media print {
-	.visible-phone {display:none !important;}
-	a[href]:after {content: none !important;}
-	div#menu {display:none !important}
-	div#top-right {display:none !important}
-	div#breadcrumbs {display:none !important}
-	div.footer-right {display:none !important}
-	.row-fluid [class*="span"] {display:block !important;width:100% !important; margin-left:0 !important; float:none !important}
-	p.readmore {display:none !important;}
-	abbr {display:none;}
-	*.displayonly {display: none !important;}
-}
-
-@media screen {
-	*.printonly {display:none !important;}
-}
-
 /* Hide unwanted languages */
 html:lang(en) *:lang(it) {display:none !important;}
 html:lang(it) *:lang(en) {display:none !important;}
@@ -259,3 +232,27 @@ html:lang(it) *:lang(en) {display:none !important;}
 .no-js *.js {display:none;}
 .no-js div.no-js {display: block !important;visibility: visible !important}
 div.no-js span.alert {font-size:24px;padding:6px 12px;}
+
+
+/* Printing styles */
+@media screen {
+	*.printonly {display:none !important;}
+}
+
+@media print {
+	.visible-phone {display:none !important;}
+	a[href]:after {content: none !important;}
+	div#menu {display:none !important;}
+	div#menus {display:none !important;}
+	ul.nav {display:none !important;}
+	div#top-right {display:none !important;}
+	div#breadcrumbs {display:none !important;}
+	.row-fluid [class*="span"] {display:block !important;width:100% !important; margin-left:0 !important; float:none !important;}
+	p.readmore {display:none !important;}
+	*.displayonly {display: none !important;}
+	nav.navigation {display:none !important;}
+	img.logos {max-width:75px !important; max-height:50px !important;}
+	div.social-icon {display:none !important;}
+	abbr[title]:after {content: none !important;}
+	abbr {border-bottom:0 !important;}
+}
