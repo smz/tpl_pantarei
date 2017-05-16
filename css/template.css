@@ -166,9 +166,17 @@ section.category-children ul > li > ul > li > ul {padding:0 15px 0 15px;}
 section.category-items th.list-hits, section.category-items td.list-hits,
 section.category-items th.list-edit, section.category-items td.list-edit {text-align:right;}
 
-/* AcyMailing subscription (component) */
+/* AcyMailing subscription (Component) */
 div#acymodifyform span.refreshCaptcha {margin-left:8px; margin-top:5px;}
 div#acymodifyform td.captchakeycomponent {padding-top:5px;}
+
+/* AcyMailing subscription (Tabless module) */
+.acymailing_module input {margin:10px 10px 0 0;}
+.acymailing_module form {margin-bottom:0;}
+.acymailing_module span.refreshCaptchaModule {display:inline-block;float:none;position:relative;top:13px;margin:0 10px;}
+.acymailing_module img.captchaimagemodule {float:none;margin-top:10px;}
+.acymailing_module div.fieldacycaptcha {display:inline-block;}
+.acymailing_module div.fieldacycaptcha input {margin-bottom:0;}
 
 /* AcyMailing Archive*/
 div#acyarchivelisting form#adminForm {margin-bottom:0;}
@@ -180,6 +188,7 @@ div#acyarchivelisting div.archiveRow1 {background-color:rgb(249, 249, 249);}
 div#acyarchivelisting div.acyarchivetitle {padding-left:10px; font-size:inherit; line-height:inherit; font-weight:normal;}
 div#acyarchivelisting div.sentondate {padding-left:10px; font-size:inherit; line-height:inherit;}
 html:lang(it) div#acyarchivelisting div.sentondate {text-transform:lowercase;}
+
 
 /****************************** Boostrap fixes *********************************/
 
