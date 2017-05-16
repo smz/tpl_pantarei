@@ -7,15 +7,15 @@
 	<authorUrl>http://smz.it</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.5.2</version>
-	<creationDate>March 2017</creationDate>
+	<version>3.6.0</version>
+	<creationDate>May 2017</creationDate>
+
 	<files>
 		<file>index.php</file>
 		<file>component.php</file>
 		<file>templateDetails.xml</file>
 		<file>template_preview.png</file>
 		<file>template_thumbnail.png</file>
-		<folder>language</folder>
 		<folder>helpers</folder>
 		<folder>html</folder>
 		<folder>images</folder>
@@ -23,29 +23,38 @@
 		<folder>js</folder>
 		<folder>bootstrap</folder>
 	</files>
+
 	<positions>
-	<position>above-menu</position>
-	<position>menu</position>
-	<position>hero</position>
-	<position>above</position>
-	<position>left</position>
-	<position>before-content</position>
-	<position>after-content</position>
-	<position>right</position>
-	<position>below</position>
-	<position>breadcrumbs</position>
-	<position>footer-left</position>
-	<position>footer-right</position>
-	<position>debug</position>
+		<position>above-menu</position>
+		<position>menu</position>
+		<position>hero</position>
+		<position>above</position>
+		<position>left</position>
+		<position>before-content</position>
+		<position>after-content</position>
+		<position>right</position>
+		<position>below</position>
+		<position>breadcrumbs</position>
+		<position>footer</position>
+		<position>footer-left</position>
+		<position>footer-right</position>
+		<position>debug</position>
+
+		<position>phone-menu</position>
+		<position>logo</position>
+		<position>top-right</position>
+		<position>menu-1</position>
+		<position>menu-2</position>
+		<position>menu-3</position>
 	</positions>
-<!--
+
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_pantarei.ini</language>
 		<language tag="en-GB">en-GB/en-GB.tpl_pantarei.sys.ini</language>
 		<language tag="it-IT">it-IT/it-IT.tpl_pantarei.ini</language>
 		<language tag="it-IT">it-IT/it-IT.tpl_pantarei.sys.ini</language>
 	</languages>
--->
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic">

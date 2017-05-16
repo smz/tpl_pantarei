@@ -1,0 +1,110 @@
+/* Phone menu */
+.visible-phone.navbar-fixed-top {margin-bottom:10px;}
+.visible-phone div.btn-container {float:left;margin-left:15px;}
+.visible-phone div.nav-collapse {padding-left:8px;}
+
+/* Logo */
+div#logo a, div#logo a:hover {text-decoration:none;}
+
+/* Top */
+div#top {margin-top:10px;margin-bottom:15px;}
+div#top > div {margin:0;}
+
+/* Top right */
+div#top-right div.search form {margin: 0px}
+div#top-right-inner {float:right;display:table-cell;}
+div#top-right-inner > div {display:block;}
+
+/* Language switcher */
+div.mod-languages ul {float:right;}
+div.mod-languages img {vertical-align: top;}
+div.mod-languages ul li {margin-right:0;}
+div.mod-languages ul li.lang-active {opacity:0.5}
+div.mod-languages ul li:first-child {margin-left: 1px;}
+div.mod-languages ul li:last-child {padding-right:2px;}
+.lt-ie9 div.mod-languages ul li {float:right;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+
+/* Mod Search */
+div#top-right input.inputbox.search-query {border-radius:0;width:initial;font-size:12px;padding:4px}
+
+/* Media query overrides for #top content */
+@media (max-width:767px) {
+	div#top {margin-top:0;}
+	div#top-right {padding-top:15px;}
+	div#top-right-inner {float:none;}
+	div.mod-languages ul {float:none;}
+}
+
+/* Desktop navbar */
+div#menus {max-width:1200px;margin:0 auto;padding-bottom: 10px;border-bottom: 1px solid #CCC;background-color:#FFF}
+div#menus {padding-bottom:0;border-bottom:0;}
+
+@media (max-width:1248px) {
+	div#menus {margin-left:24px;margin-right:24px;}
+}
+
+@media (max-width:979px) {
+	/* .navbar-fixed-top {position:fixed;} */
+	.navbar-fixed-top .navbar-inner {padding:initial;}
+}
+div#menus-inner {background-color:#461e57;}
+div#menus-inner {padding:2px;}
+div#menus-inner > div {min-height:0;margin:2px 0px 0px 0px;background-color:transparent}
+.hidden-phone .navbar {margin:0;}
+.hidden-phone .navbar .nav {margin:0;}
+
+/* Separator between menu elements */
+/*
+.hidden-phone .navbar .nav ul > li {border-right:1px solid #7B619F} 
+.hidden-phone .navbar .nav ul > li:last-child {border-right:0} 
+*/
+ 
+/* Navbar fonts */
+div#menu1 .navbar .nav {font-family:'Source Sans Pro', 'Helvetica Neue', Helvetica, ?Arial, sans-serif;font-size:15px;letter-spacing:0.6px;font-weight:400;text-transform:uppercase;}
+div#menu2 .navbar .nav {font-family:'Source Sans Pro', 'Helvetica Neue', Helvetica, ?Arial, sans-serif;font-size:15px;letter-spacing:0.6px;font-weight:400;}
+div#menu3 .navbar .nav {font-family:'Source Sans Pro', 'Helvetica Neue', Helvetica, ?Arial, sans-serif;font-size:15px;letter-spacing:0.6px;font-weight:400;}
+
+.hidden-phone .navbar-inner {
+background-color:transparent;
+background-image:none;
+border:none;
+-webkit-border-radius:0px;
+-moz-border-radius:0px;
+border-radius:0px;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+padding-left:0;
+padding-right:0;
+min-height:0;
+float:right;
+}
+
+.hidden-phone .navbar .nav li > a,
+.hidden-phone .navbar .nav li > a:hover,
+.hidden-phone .navbar .nav li > a:focus,
+.hidden-phone .navbar .nav li.active > a, 
+.hidden-phone .navbar .nav li.active > a:hover, 
+.hidden-phone .navbar .nav li.active > a:focus {
+background-color: transparent;
+background-image:none;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+box-shadow:none;
+text-shadow:none;
+padding: 0px 6px;
+margin-bottom: 0px
+}
+
+.hidden-phone .navbar .nav li > a {
+color:#DADADA
+}
+
+.hidden-phone .navbar .nav li.active > a {
+color: rgba(0, 255, 246, 0.85);
+}
+
+.hidden-phone .navbar .nav li > a:hover,
+.hidden-phone .navbar .nav li.active > a:hover {
+background-color: #7B619F;
+}

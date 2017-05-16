@@ -81,8 +81,37 @@ for ($i = 1; $i < 6; $i++)
 	}
 }
 
+// Count modules
+$above_menu = $this->countModules('above-menu');
+$menu = $this->countModules('menu');
+$hero = $this->countModules('hero');
+$above = $this->countModules('above');
+$left = $this->countModules('left');
+$before_content = $this->countModules('before-content');
+$after_content = $this->countModules('after-content');
+$right = $this->countModules('right');
+$below = $this->countModules('below');
+$breadcrumbs = $this->countModules('breadcrumbs');
+$footer = $this->countModules('footer');
+$footer_left = $this->countModules('footer-left');
+$footer_right = $this->countModules('footer-right');
+$has_footer = $footer + $footer_left + $footer_right;
+
+// Count "nicona" modules
+$phone_menu = $this->countModules('phone-menu');
+$logo = $this->countModules('logo');
+$top_right = $this->countModules('top-right');
+$menu_1 = $this->countModules('menu-1');
+$menu_2 = $this->countModules('menu-2');
+$menu_3 = $this->countModules('menu-3');
+$nicona_modules = $logo + $top_right + $menu_1 + $menu_2 + $menu_3;
+
 // Add template stylesheets
 $doc->addStyleSheet('templates/' . $this->template . '/css/template.css' . $css_version_string);
+if ($nicona_modules && file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/nicona.css'))
+{
+	$doc->addStyleSheet('templates/'. $this->template . '/css/nicona.css' . $css_version_string);
+}
 if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/custom.css'))
 {
 	$doc->addStyleSheet('templates/'. $this->template . '/css/custom.css' . $css_version_string);

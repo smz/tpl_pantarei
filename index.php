@@ -16,12 +16,6 @@ include_once __DIR__ . '/helpers/tpl-init.php';
 
 <head>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-<?php
-if (file_exists(JPATH_SITE . '/images/favicons/favicons.php'))
-{
- include_once JPATH_SITE . '/images/favicons/favicons.php';
-}
-?>
 <jdoc:include type="head" />
 </head>
 
@@ -29,18 +23,54 @@ if (file_exists(JPATH_SITE . '/images/favicons/favicons.php'))
 <div class='hidden no-js container' style='margin-top:40px;text-align:center;'>
 <span class='alert alert-error'><?php echo JText::_('SMZ_NOJAVASCRIPT_ALERT') ?></span>
 </div>
-<?php if($this->countModules('above-menu')) : ?>
-<div id='above-menu' class='js fullwidth'>
-<jdoc:include type="modules" name="above-menu" />
+
+<!-------------- START NICONA COMPAT -------------->
+<!-- Phone menu-->
+<?php if($phone_menu) : ?>
+<div class="navbar navbar-fixed-top navbar-inverse visible-phone"><div class="container navbar-inner"><div class="btn-container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a></div><div class="nav-collapse collapse"><jdoc:include type="modules" name="phone-menu" /></div></div></div>
+<?php endif;?>
+
+<!-- Top (logo, language switcher, search) -->
+<?php if($nicona_modules) : ?>
+<div id="top" class="container-fluid">
+	<div class="row-fluid">
+		<?php if($logo) : ?>
+		<div id="logo" class="span6"><div id="logo-inner"><jdoc:include type="modules" name="logo" /></div></div>
+		<?php endif;?>
+		<?php if($top_right) : ?>
+		<div id="top-right" class="span6"><div id="top-right-inner"><jdoc:include type="modules" name="top-right" /></div></div>
+		<?php endif; ?>
+	</div>
+</div>
+
+<!-- Desktop menu -->
+<div id="menus" class="hidden-phone js">
+	<div id="menus-inner">
+		<!-- Menu 1 (desktop)-->
+		<?php if($menu_1) : ?>
+		<div id="menu1" class="row"><div class="navbar"><div class="navbar-inner"><div class="nav"><jdoc:include type="modules" name="menu-1" /></div></div></div></div>
+		<?php endif; ?>
+		<!-- Menu 2 (desktop)-->
+		<?php if($menu_2) : ?>
+		<div id="menu2" class="row"><div class="navbar"><div class="navbar-inner"><div class="nav"><jdoc:include type="modules" name="menu-2" /></div></div></div></div>
+		<?php endif; ?>
+		<!-- Menu 3 (desktop)-->
+		<?php if($menu_3) : ?>
+		<div id="menu3" class="row"><div class="navbar"><div class="navbar-inner"><div class="nav"><jdoc:include type="modules" name="menu-3" /></div></div></div></div>
+		<?php endif; ?>
+	</div>
 </div>
 <?php endif; ?>
-<div class='js'>
-<jdoc:include type="modules" name="menu" />
-</div>
-<?php if($this->countModules('hero')) : ?>
-<div id='hero' class='js fullwidth'>
-<jdoc:include type="modules" name="hero" />
-</div>
+<!--------------- END NICONA COMPAT --------------->
+
+<?php if($above_menu) : ?>
+<div id='above-menu' class='js fullwidth'><jdoc:include type="modules" name="above-menu" /></div>
+<?php endif; ?>
+<?php if($menu) : ?>
+<div id='menu' class='js'><jdoc:include type="modules" name="menu" /></div>
+<?php endif; ?>
+<?php if($hero) : ?>
+<div id='hero' class='js fullwidth'><jdoc:include type="modules" name="hero" /></div>
 <?php endif; ?>
 <div id='external' class='js'>
 <div id='internal' class='container-fluid<?php echo $fullWidth; ?>'>
@@ -51,57 +81,44 @@ if (file_exists(JPATH_SITE . '/images/favicons/favicons.php'))
 <![endif]-->
 <jdoc:include type="message" />
 	<div id='main'>
-<?php	if($this->countModules('above')) : ?>
-		<div id='above' class='row-fluid'>
-<jdoc:include type="modules" name="above" />
-		</div>
+<?php	if($above) : ?>
+<div id='above' class='row-fluid'><jdoc:include type="modules" name="above" /></div>
 <?php	endif; ?>
 		<div id='middle' class='row-fluid'>
-<?php		if($this->countModules('left')) : ?>
-			<div id='left' class='span<?php echo $leftColumnWidth; ?>'>
-<jdoc:include type="modules" name="left" />
-			</div>
+<?php		if($left) : ?>
+			<div id='left' class='span<?php echo $leftColumnWidth; ?>'><jdoc:include type="modules" name="left" /></div>
 <?php		endif; ?>
 			<div id='center' class='span<?php echo $mainColumnWidth; ?>'>
-<?php			if($this->countModules('before-content')) : ?>
-				<div id='before-content'>
-<jdoc:include type="modules" name="before-content" />
-				</div>
+<?php			if($before_content) : ?>
+				<div id='before-content'><jdoc:include type="modules" name="before-content" /></div>
 <?php			endif; ?>
-				<div id='content'>
-<jdoc:include type="component" />
-				</div>
-<?php			if($this->countModules('after-content')) : ?>
-				<div id='after-content'>
-<jdoc:include type="modules" name="after-content" />
-				</div>
+				<div id='content'><jdoc:include type="component" /></div>
+<?php			if($after_content) : ?>
+				<div id='after-content'><jdoc:include type="modules" name="after-content" /></div>
 <?php			endif; ?>
 			</div>
-<?php		if($this->countModules('right')) : ?>
-			<div id='right' class='span<?php echo $rightColumnWidth; ?>'>
-<jdoc:include type="modules" name="right" />
-			</div>
+<?php		if($right) : ?>
+			<div id='right' class='span<?php echo $rightColumnWidth; ?>'><jdoc:include type="modules" name="right" /></div>
 <?php		endif; ?>
 		</div>
-<?php	if($this->countModules('below')) : ?>
-		<div id='below' class='row-fluid'>
-<jdoc:include type="modules" name="below" />
-		</div>
+<?php	if($below) : ?>
+		<div id='below' class='row-fluid'><jdoc:include type="modules" name="below" /></div>
 <?php	endif; ?>
 	</div>
-<?php if($this->countModules('breadcrumbs')) : ?>
-	<div id='breadcrumbs' class='row-fluid'>
-<jdoc:include type="modules" name="breadcrumbs" />
-	</div>
+<?php if($breadcrumbs) : ?>
+	<div id='breadcrumbs' class='row-fluid'><jdoc:include type="modules" name="breadcrumbs" /></div>
 <?php endif; ?>
-<?php if($this->countModules('footer-left') || $this->countModules('footer-right')) : ?>
+<?php if($has_footer) : ?>
 	<footer id='footer' class='footer row-fluid'>
-		<div id='footer-right' class='pull-right'>
-<jdoc:include type="modules" name="footer-right" />
-		</div>
-		<div id='footer-left' class='pull-left'>
-<jdoc:include type="modules" name="footer-left" />
-		</div>
+<?php if($footer) : ?>
+<jdoc:include type="modules" name="footer" />
+<?php endif; ?>
+<?php if($footer_right) : ?>
+		<div id='footer-right' class='pull-right'><jdoc:include type="modules" name="footer-right" /></div>
+<?php endif; ?>
+<?php if($footer_left) : ?>
+		<div id='footer-left' class='pull-left'><jdoc:include type="modules" name="footer-left" /></div>
+<?php endif; ?>
 	</footer>
 <?php endif; ?>
 <jdoc:include type="modules" name="debug" />
