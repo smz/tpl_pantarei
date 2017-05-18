@@ -67,10 +67,7 @@ a:hover {color:#cc1fad}
 /* Images */
 img.top-left {float:left; margin:0 10px 10px 0; position:relative; top:7px;}
 
-/* Navbar */
-nav.navbar ul.nav {font-size:14px; line-height:20px; letter-spacing:1px; font-weight:400; text-transform:uppercase;}
-
-/* Language switcher */
+/* Language switcher (nicona) */
 div#language-switcher {float:right;}
 ul.lang-inline li {margin-left:0;}
 ul.lang-inline li + li {margin-left:5px;}
