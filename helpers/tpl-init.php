@@ -111,19 +111,23 @@ $menu_2 = $this->countModules('menu-2');
 $menu_3 = $this->countModules('menu-3');
 $nicona_modules = $logo + $top_right + $menu_1 + $menu_2 + $menu_3;
 
-// Add template stylesheets
+// Add template stylesheet
 $doc->addStyleSheet('templates/' . $this->template . '/css/template.css' . $css_version_string);
+
+// Add 'nicona' stylesheet if needed
 if ($nicona_modules && file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/nicona.css'))
 {
 	$doc->addStyleSheet('templates/'. $this->template . '/css/nicona.css' . $css_version_string);
 }
+
+// Prepare to load custom stylesheet
 if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/custom.css'))
 {
-	$doc->addStyleSheet('templates/'. $this->template . '/css/custom.css' . $css_version_string);
+	$customStyleSheet = "\t<link href='/templates/" . $this->template . '/css/custom.css' . $css_version_string . "' rel='stylesheet' type='text/css' />\n";
 }
-if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/bootstrap_' . $bootstrapVersion . 'css'))
+else
 {
-	$doc->addStyleSheet('templates/'. $this->template . '/css/bootstrap_' . $bootstrapVersion . 'css' . $css_version_string);
+	$customStyleSheet = '';
 }
 
 // Add modernizer.js
