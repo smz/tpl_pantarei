@@ -70,7 +70,7 @@ switch ($bootstrapVersion)
 		if ($this->params->get('affixMenu', 0))
 		{
 			$affixOffset = max($this->params->get('affixOffset', 0), 0.5);  // Offset 0 does not work!
-			$menuOptions =  " class='js affix-top' style='width:100%; z-index:100000;' data-spy='affix' data-offset-top='{$affixOffset}'";
+			$menuOptions =  " class='js affix-top affixed' data-spy='affix' data-offset-top='{$affixOffset}'";
 			$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-affix.min.js');
 		}
 		break;

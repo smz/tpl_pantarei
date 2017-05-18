@@ -4,6 +4,8 @@ body {padding:0 !important;}
 }
 
 /* Main divs */
+div#menu {z-index:100000;}
+div#menu.affixed {width:100%;}
 div#system-message {margin-top:20px;}
 div#internal, div#top {max-width:1200px; margin:0 auto; padding-left:0; padding-right:0;}
 div#above {margin-top:0;}
