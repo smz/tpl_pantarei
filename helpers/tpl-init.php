@@ -69,7 +69,7 @@ switch ($bootstrapVersion)
 		$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-fixed.min.js');
 		if ($this->params->get('affixMenu', 0))
 		{
-			$affixOffset = min((int) $this->params->get('affixMenu', 0), 0.5);  // Offset 0 does not work!
+			$affixOffset = max($this->params->get('affixOffset', 0), 0.5);  // Offset 0 does not work!
 			$menuOptions =  " class='js affix-top' style='width:100%; z-index:100000;' data-spy='affix' data-offset-top='{$affixOffset}'";
 			$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-affix.min.js');
 		}
