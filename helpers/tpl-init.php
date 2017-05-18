@@ -58,6 +58,7 @@ switch ($bootstrapVersion)
 	case 'JUI' :
 		JHtml::_('bootstrap.framework');
 		JHtmlBootstrap::loadCSS('true', $this->direction);
+		$menuOptions = " class='js'";
 		break;
 	case 'TWITTER' :
 		unset($this->_styleSheets[$this->baseurl . '/media/jui/css/bootstrap.min.css']);
@@ -66,8 +67,12 @@ switch ($bootstrapVersion)
 		$doc->addStyleSheet('templates/'.$this->template . '/bootstrap/css/bootstrap.min.css');
 		$doc->addStyleSheet('templates/'.$this->template . '/bootstrap/css/bootstrap-responsive.min.css');
 		$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-fixed.min.js');
-		break;
-	default :
+		if ($this->params->get('affixMenu', 0))
+		{
+			$affixOffset = min((int) $this->params->get('affixMenu', 0), 0.5);  // Offset 0 does not work!
+			$menuOptions =  " class='js affix-top' style='width:100%; z-index:100000;' data-spy='affix' data-offset-top='{$affixOffset}'";
+			$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-affix.min.js');
+		}
 		break;
 }	
 

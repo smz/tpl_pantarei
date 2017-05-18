@@ -67,7 +67,7 @@ include_once __DIR__ . '/helpers/tpl-init.php';
 <div id='above-menu' class='js fullwidth'><jdoc:include type="modules" name="above-menu" /></div>
 <?php endif; ?>
 <?php if($menu) : ?>
-<div id='menu' class='js'><jdoc:include type="modules" name="menu" /></div>
+<div id='menu'<?php echo $menuOptions ?>><jdoc:include type="modules" name="menu" /></div>
 <?php endif; ?>
 <?php if($hero) : ?>
 <div id='hero' class='js fullwidth'><jdoc:include type="modules" name="hero" /></div>
