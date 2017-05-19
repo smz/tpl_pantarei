@@ -7,7 +7,7 @@
 	<authorUrl>http://smz.it</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.7.0-dev</version>
+	<version>3.7.0</version>
 	<creationDate>May 2017</creationDate>
 
 	<files>
@@ -58,9 +58,9 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="bootstrapVersion" type="list" default="JUI" label="SMZ_PANTAREI_BOOTSTRAPVERSION" description="SMZ_PANTAREI_BOOTSTRAPVERSION_DESC">
-					<option value="JUI">SMZ_PANTAREI_BOOTSTRAPJUI</option>
-					<option value="TWITTER">SMZ_PANTAREI_BOOTSTRAPTWITTER</option>
+				<field name="bootstrapVersion" type="list" default="twitter" label="SMZ_PANTAREI_BOOTSTRAPVERSION" description="SMZ_PANTAREI_BOOTSTRAPVERSION_DESC">
+					<option value="twitter">SMZ_PANTAREI_BOOTSTRAPTWITTER</option>
+					<option value="jui">SMZ_PANTAREI_BOOTSTRAPJUI</option>
 				</field>
 				<field name="affixMenu" type="radio" class="btn-group" showon="bootstrapVersion:TWITTER" default="0" label="SMZ_PANTAREI_AFFIXMENU" description="SMZ_PANTAREI_AFFIXMENU_DESC">
 					<option value="0">JNO</option>

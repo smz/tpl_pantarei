@@ -25,7 +25,7 @@ if ($this->params->get('removeMootols', 0))
 }
 
 // See which Boostrap version we want to use
-$bootstrapVersion = $this->params->get('bootstrapVersion', 'JUI');
+$bootstrapVersion = strolower($this->params->get('bootstrapVersion', 'twitter'));
 
 // Calculate mainColumnWidth
 $mainColumnWidth = 12;
@@ -55,12 +55,12 @@ if ($css_version_string)
 // Add selected Bootstrap version
 switch ($bootstrapVersion)
 {
-	case 'JUI' :
+	case 'jui' :
 		JHtml::_('bootstrap.framework');
 		JHtmlBootstrap::loadCSS('true', $this->direction);
 		$menuOptions = " class='js'";
 		break;
-	case 'TWITTER' :
+	case 'twitter' :
 		unset($this->_styleSheets[$this->baseurl . '/media/jui/css/bootstrap.min.css']);
 		unset($this->_styleSheets[$this->baseurl . '/media/jui/css/bootstrap-responsive.min.css']);
 		unset($this->_scripts['/media/jui/js/bootstrap.min.js']);
