@@ -25,7 +25,7 @@ if ($this->params->get('removeMootols', 0))
 }
 
 // See which Boostrap version we want to use
-$bootstrapVersion = strolower($this->params->get('bootstrapVersion', 'twitter'));
+$bootstrapVersion = strtolower($this->params->get('bootstrapVersion', 'twitter'));
 
 // Calculate mainColumnWidth
 $mainColumnWidth = 12;
