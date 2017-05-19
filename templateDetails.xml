@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension version="3.4" type="template" method="upgrade">
-	<name>Panta Rei</name>
+	<name>pantarei</name>
 	<description>SMZ_PANTAREI_XML_DESCRIPTION</description>
 	<author>Sergio Manzi</author>
 	<authorEmail>info@smz.it</authorEmail>
-	<authorUrl>http://smz.it</authorUrl>
+	<authorUrl>https://github.com/smz/tpl_pantarei</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.7.0</version>
+	<version>3.7.1</version>
 	<creationDate>May 2017</creationDate>
 
 	<files>
