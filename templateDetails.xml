@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.0" type="template" client="site" method="upgrade">
 	<name>pantarei</name>
 	<description>SMZ_PANTAREI_XML_DESCRIPTION</description>
 	<author>Sergio Manzi</author>
