@@ -67,14 +67,16 @@ switch ($bootstrapVersion)
 		$doc->addStyleSheet('templates/'.$this->template . '/bootstrap/css/bootstrap.min.css');
 		$doc->addStyleSheet('templates/'.$this->template . '/bootstrap/css/bootstrap-responsive.min.css');
 		$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-fixed.min.js');
-		if ($this->params->get('affixMenu', 0))
-		{
-			$affixOffset = max($this->params->get('affixOffset', 0), 0.5);  // Offset 0 does not work!
-			$menuOptions =  " class='js affix-top affixed' data-spy='affix' data-offset-top='{$affixOffset}'";
-			$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-affix.min.js');
-		}
 		break;
 }	
+
+// Add code for "affixing" the "menu" position
+if ($this->params->get('affixMenu', 0))
+{
+	$affixOffset = max($this->params->get('affixOffset', 0), 0.5);  // Offset 0 does not work!
+	$menuOptions =  " class='js affix-top affixed' data-spy='affix' data-offset-top='{$affixOffset}'";
+	$doc->addScript('templates/'.$this->template . '/bootstrap/js/bootstrap-affix.min.js');
+}
 
 // Add Google fonts
 for ($i = 1; $i < 6; $i++)

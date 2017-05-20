@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension version="3.0" type="template" client="site" method="upgrade">
 	<name>pantarei</name>
-	<description>SMZ_PANTAREI_XML_DESCRIPTION</description>
+	<description>PANTAREI_DESC</description>
 	<author>Sergio Manzi</author>
 	<authorEmail>info@smz.it</authorEmail>
 	<authorUrl>https://github.com/smz/tpl_pantarei</authorUrl>
 	<copyright>Copyright (C) 2016 - Sergio Manzi. All rights reserved.</copyright>
 	<license>GNU General Public License (GNU GPL) Version 3</license>
-	<version>3.7.1</version>
+	<version>3.7.2</version>
 	<creationDate>May 2017</creationDate>
 
 	<files>
@@ -58,11 +58,11 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="bootstrapVersion" type="list" default="twitter" label="SMZ_PANTAREI_BOOTSTRAPVERSION" description="SMZ_PANTAREI_BOOTSTRAPVERSION_DESC">
-					<option value="twitter">SMZ_PANTAREI_BOOTSTRAPTWITTER</option>
+				<field name="bootstrapVersion" type="list" default="jui" label="SMZ_PANTAREI_BOOTSTRAPVERSION" description="SMZ_PANTAREI_BOOTSTRAPVERSION_DESC">
 					<option value="jui">SMZ_PANTAREI_BOOTSTRAPJUI</option>
+					<option value="twitter">SMZ_PANTAREI_BOOTSTRAPTWITTER</option>
 				</field>
-				<field name="affixMenu" type="radio" class="btn-group" showon="bootstrapVersion:TWITTER" default="0" label="SMZ_PANTAREI_AFFIXMENU" description="SMZ_PANTAREI_AFFIXMENU_DESC">
+				<field name="affixMenu" type="radio" class="btn-group" default="0" label="SMZ_PANTAREI_AFFIXMENU" description="SMZ_PANTAREI_AFFIXMENU_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
